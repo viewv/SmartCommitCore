@@ -25,3 +25,11 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Gradle fatJar
+      run: ./gradlew fatJar
+      
+    - name: Upload Target
+      uses: actions/upload-artifact@master
+      with:
+        name: Build
+        path: build/
